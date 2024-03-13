@@ -9,7 +9,7 @@ To use the application, enter the name of a YouTube channel and click the "Go" b
 ## Getting Started
 
 1. Clone this repository.
-2. Install the required dependencies (if any).
+2. Install the required dependencies listed in requirements.txt.
 3. Run the Flask application using `python app.py`.
 4. Access the application in your web browser at the specified URL.
 
