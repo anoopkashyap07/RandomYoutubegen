@@ -19,7 +19,7 @@ def get_channel_id(channel_name):
         return None
 
 
-def get_video_ids_for_channel(channel_name, max_results=50):
+def get_video_ids_for_channel(channel_name, max_results=100):
     channel_id = get_channel_id(channel_name)
     if not channel_id:
         return None
@@ -55,18 +55,21 @@ def get_video_ids_for_channel(channel_name, max_results=50):
 
     return video_ids
 
-def get_random_video_id(channel_name):
+def get_random_video_info(channel_name):
     video_ids = get_video_ids_for_channel(channel_name)
     if video_ids:
-        return random.choice(video_ids)
+        random_video_id = random.choice(video_ids)
+        video_url = f"https://www.youtube.com/watch?v={random_video_id}"
+        return random_video_id, video_url
     else:
-        return None
+        return None, None
+
 
 def main():
     channel_name = input("Enter the name of the YouTube channel: ")
-    random_video_id = get_random_video_id(channel_name)
+    random_video_id = get_random_video_info(channel_name)
     if random_video_id:
-        print(f"Random video ID for '{channel_name}': {random_video_id}")
+        print(f"Random video for '{channel_name}': {random_video_id}")
     else:
         print(f"No videos found for the channel '{channel_name}'.")
 
