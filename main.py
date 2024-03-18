@@ -5,7 +5,7 @@ import os
 
 # Set up YouTube API service
 DEVELOPER_KEY = os.environ.get("DEVELOPER_KEY")
-youtube = build("youtube", "v3", developerKey="YOUR_DEVELOPER_KEY")
+youtube = build("youtube", "v3", developerKey="DEVELOPER_KEY")
 
 def get_channel_id(channel_name):
     search_response = youtube.search().list(
