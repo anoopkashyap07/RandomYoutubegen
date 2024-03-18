@@ -1,9 +1,10 @@
 from googleapiclient.discovery import build
 import random
 from flask import Flask, render_template, request
+import os
 
 # Set up YouTube API service
-youtube = build("youtube", "v3", developerKey="AIzaSyAU2FyR1mDn7dLiJoM9LT6YnDO3lzdH4K0")
+youtube = build("youtube", "v3", developerKey="YOUR_DEVELOPER_KEY")
 
 def get_channel_id(channel_name):
     search_response = youtube.search().list(
