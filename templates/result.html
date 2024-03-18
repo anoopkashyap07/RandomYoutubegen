@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Video ID Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Random YouTube Video Generator</h1>
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% else %}
+        <p><a href="{{ video_url }}" target="_blank">Watch Video</a></p>
+    {% endif %}
+    <p><a href="/">Generate Another Video</a></p>
+</body>
+</html>
